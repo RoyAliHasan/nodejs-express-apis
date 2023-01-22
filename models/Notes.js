@@ -1,22 +1,21 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const UserSchema = new Schema({
-  name: {
+const NotesSchema = new Schema({
+  title: {
     type: String,
     required: true,
   },
-  email: {
+  description: {
     type: String,
     required: true,
-    unique: true,
   },
-  password: {
+  tag: {
     type: String,
-    required: true,
+    default: "General",
   },
   date: {
     type: Date,
     default: Date.now,
   },
 });
-model.export = U = mongoose.model("user", UserSchema);
+model.export = U = mongoose.model("notes", NotesSchema);
