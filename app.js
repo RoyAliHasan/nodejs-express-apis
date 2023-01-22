@@ -2,6 +2,9 @@ var express = require('express');
 var app = express()
 const connectToMongo = require('./db');
 
+// Middle ware
+app.use(express.json())
+
 // connection with DataBase
 const db = require("./db");
 connectToMongo();
@@ -14,13 +17,10 @@ app.use("/api/notes",require("./routes/notes"))
 
 
 app.get('/', (req, res) => {
-    res.send({ "id": 1, "name": "Ali Hasan" })
-})
-app.get('/api/list/:id', (req, res) => {
-    // res.send(req.params.id)
-    res.send(req.query)
+    res.send("Welcome ..... ")
 })
 
 
 
-app.listen(5000, () => console.debug("server runing...."))    
+
+app.listen(3000, () => console.debug("server runing...."))    
