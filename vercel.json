@@ -1,0 +1,23 @@
+{
+    "version": 2,
+    "env": {
+      "MONGO_URI": "@mongo-uri"
+    },
+    "builds": [
+      {
+        "src": "app.js",
+        "use": "@now/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "^/api/(.*)",
+        "dest": "app.js"
+      },
+      {
+        "src": ".*",
+        "dest": "app.js"
+      }
+    ]
+  }
+  

@@ -21,4 +21,4 @@ app.get('/', (req, res) => {
     res.send("Welcome ..... ")
 })
 
-app.listen(process.env.PORT, () => console.debug("server runing on Port...."+ process.env.PORT))    
+app.listen(process.env.PORT, () => console.debug("server running on Port...."+ process.env.PORT))    
